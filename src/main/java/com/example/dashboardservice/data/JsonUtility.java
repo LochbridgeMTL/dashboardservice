@@ -56,4 +56,17 @@ public class JsonUtility {
         return pieChartData;
 
     }
+
+
+    public String getLineChartDataString(LineChartData lineChartData)
+    {
+        String returnValue = null;
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            returnValue = objectMapper.writeValueAsString(lineChartData);
+        } catch (Exception e){
+            System.out.println(e.getStackTrace());
+        }
+        return returnValue;
+    }
 }

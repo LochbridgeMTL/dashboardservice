@@ -1,6 +1,8 @@
 package com.example.dashboardservice;
 
-import com.example.dashboardservice.resources.HelloResource;
+import com.example.dashboardservice.resources.GeneralDataResource;
+import com.example.dashboardservice.resources.InitializeResource;
+import com.example.dashboardservice.resources.LineChartDataResource;
 import com.example.dashboardservice.resources.PieChartDataResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -25,9 +27,10 @@ public class dashboardserviceApplication extends Application<dashboardserviceCon
     @Override
     public void run(final dashboardserviceConfiguration configuration,
                     final Environment environment) {
-        environment.jersey().register(new HelloResource());
-        environment.jersey().register(new PieChartDataResource());
-
+        environment.jersey().register(new InitializeResource());
+  //      environment.jersey().register(new PieChartDataResource());
+  //      environment.jersey().register(new LineChartDataResource());
+        environment.jersey().register(new GeneralDataResource());
     }
 
 }
